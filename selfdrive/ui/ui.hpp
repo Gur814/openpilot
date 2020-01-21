@@ -117,6 +117,15 @@ typedef struct UIScene {
 
   // Used to show gps planner status
   bool gps_planner_active;
+
+  // for minimal UI
+  float angleSteersDes;
+  float angleSteers;
+
+  // for blinker, from kegman
+  bool leftBlinker;
+  bool rightBlinker;
+  int blinker_blinkingrate;
 } UIScene;
 
 typedef struct {
@@ -242,6 +251,8 @@ typedef struct UIState {
   model_path_vertices_data model_path_vertices[MODEL_LANE_PATH_CNT * 2];
 
   track_vertices_data track_vertices[2];
+
+  SubSocket *carstate_sock;
 } UIState;
 
 // API
