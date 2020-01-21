@@ -753,14 +753,14 @@ static void ui_draw_infobar(UIState *s) {
   bool hasSidebar = !s->scene.uilayout_sidebarcollapsed;
   // rect_w = screen_width - sidebar width
   int rect_w = vwp_w - (hasSidebar? sbr_w : 0);
-  if (s->dragon_driving_ui) {
+  if (true) {
     // if driving ui is enabled, rect_w = rect_w - vision start x - small boarder
     rect_w = rect_w - ui_viz_rx - bdr_s;
   }
   int rect_h = 80;
   // rect_x = 0 + sidebar width
   int rect_x = 0;
-  if (s->dragon_driving_ui) {
+  if (true) {
     // if driving ui is enabled, rect_x = rect_x + vision start x
     rect_x = rect_x + (hasSidebar? sbr_w : 0) + ui_viz_rx;
   }
@@ -769,7 +769,7 @@ static void ui_draw_infobar(UIState *s) {
 
 //  int text_width;
   int text_x = rect_w / 2;
-  if (s->dragon_driving_ui) {
+  if (true) {
     text_x = text_x + (hasSidebar? sbr_w : 0) + ui_viz_rx;
   }
   int text_y = rect_y + 55;
@@ -779,7 +779,7 @@ static void ui_draw_infobar(UIState *s) {
   time_t t = time(NULL);
   struct tm tm = *localtime(&t);
 
-  if (s->dragon_ui_dev_mini) {
+  if (true) {
       char rel_steer[9];
       snprintf(rel_steer, sizeof(rel_steer), "%s%05.1f°", s->scene.angleSteers < 0? "-" : "+", fabs(s->scene.angleSteers));
 
