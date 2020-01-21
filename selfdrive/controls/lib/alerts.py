@@ -1,4 +1,7 @@
 from cereal import car, log
+from selfdrive.kegman_conf import kegman_conf
+
+kegman = kegman_conf()
 
 # Priority
 class Priority:
